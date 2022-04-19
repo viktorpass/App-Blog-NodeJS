@@ -63,11 +63,11 @@ app.use(flash());
        });
 
     //mongo
-    async function main(){
-        await mongoose.connect(db.mongoURI);
-    }
-    main().then(()=>{console.log("Mongo DB as connect")})
-    .catch(error => console.log("A error ocurred" + error))
+    
+    mongoose.connect(db.mongoURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        }).then(()=>{console.log("Mongo DB as connect")}).catch(error => console.log("A error ocurred" + error))
 
 
 //Rotas
