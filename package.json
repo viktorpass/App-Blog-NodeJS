@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express":"*",
+    "body-parser":"*",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "express-session": "^1.17.2",
