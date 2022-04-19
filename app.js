@@ -3,7 +3,8 @@ const handlebars = require('express-handlebars');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-const port = process.env.port || 3000; 
+const port = process.env.port || 3000;
+const host = '0.0.0.0'; 
 const admin = require('./routes/adminRoutes');
 const path = require('path');
 const session = require("express-session");
@@ -142,6 +143,6 @@ app.use('/users',Users)
 app.use('/admin',admin);
 
 
-app.listen(port,()=>{
+app.listen(port,host,()=>{
     console.log('Server is listening at port: '+ port);
 });
