@@ -103,17 +103,17 @@ app.get('/404',(req,res)=>{
     res.sendStatus(404)
 })
 
-app.get('/categories',(req,res)=>{
+// app.get('/categories',(req,res)=>{
 
-    Posts.find().then((posts)=>{
-        Category.find().then((categories)=>{
-            res.render('categories/index',{categories:categories,posts:posts});
-        }).catch((error)=>{
-            req.flash('error_msg','An error ocurred');
-            res.redirect('/')
-        })
-})
-})
+//     Posts.find().then((posts)=>{
+//         Category.find().then((categories)=>{
+//             res.render('categories/index',{categories:categories,posts:posts});
+//         }).catch((error)=>{
+//             req.flash('error_msg','An error ocurred');
+//             res.redirect('/')
+//         })
+// })
+// })
 
 app.get('/categories/:slug',(req,res)=>{
     Category.findOne({slug:req.params.slug}).then((category)=>{

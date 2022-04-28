@@ -11,7 +11,14 @@ const {isAdmin} = require('../helpers/isAdmin');
 
 
 router.get('/',isAdmin,(req,res)=>{
-    res.render("admin/index");
+    Posts.find().populate('category').sort({date:'desc'}).then((post)=>{
+        res.render('admin/index',{post:post});
+    }).catch((error)=>{
+        req.flash('error_msg','An error ocurred showing the posts');
+        res.redirect('/404');
+    
+    })
+    
 })
 
 

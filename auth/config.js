@@ -17,7 +17,7 @@ module.exports = function(passport){
 
             bcrypt.compare(password,user.password,(error,match)=>{
                 if(match){
-                    return done(null,user,{message:'correct password'});
+                    return done(null,user,{message:'Correct password'});
                 }else{
                     return done(null,false,{message:'Invalid password'});
                 }
